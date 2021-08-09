@@ -1,4 +1,4 @@
-import {info, pipe, processExit0, log} from '../utils';
+import {info, pipe} from '../utils';
 import {searchIssues} from '../api';
 import configs from '../configs';
 import {reportWrite} from '../helpers';
@@ -29,7 +29,6 @@ pipe([
                     `${_acc}<div>&nbsp;&nbsp;&nbsp;&nbsp;${i + 1}. ${value.summary} (<a href="https://st.yandex-team.ru/${value.key}">${value.key}</a>)</div>`,
                 `${acc}<p><b>${key}:</b></p>`),
             '<h1>Отчет о проделанной работе:</h1>'),
-    log,
     getEmailContent,
     reportWrite,
     info('Task is done!')
