@@ -1,10 +1,15 @@
 # Review Reporter
 Утилита быстрого сбора тикетов для отчета на ревью за указанный период
+<b>TL;DR:</b> 
+1. Вставить [токен](https://oauth.yandex-team.ru/authorize?response_type=token&client_id=5f671d781aca402ab7460fde4050267b) в '.env'
+2. Заменить дату начала периода в query (`./src/configs`) на свою
+3. `npm run task:makeIssuesReport`
+4. Profit в /reports!!!
 
 ## Установка
 ```
 git clone https://github.yandex-team.ru/nybble/review-reporter.git
-&& cd review-reporter
+cd review-reporter
 npm i
 ```
 
