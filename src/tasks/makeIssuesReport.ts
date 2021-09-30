@@ -2,7 +2,7 @@ import {info, pipe} from '../utils';
 import {searchIssues} from '../api';
 import configs from '../configs';
 import {reportWrite} from '../helpers';
-import {getEmailContent} from '../helpers/mailLayout';
+import {getEmailContent} from '../helpers/htmlLayout';
 
 const {query} = configs;
 
