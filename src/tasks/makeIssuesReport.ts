@@ -4,13 +4,14 @@ import configs from '../configs';
 import {reportWrite} from '../helpers';
 import {getEmailContent} from '../helpers/htmlLayout';
 
-const {query} = configs;
+const {query, queuesToIgnore} = configs;
 
 pipe([
     info('TASK: Get Issues By Query'),
     searchIssues,
     (issues: any) => issues.reduce((acc: any, issue: any) => {
         const queue = issue.getQueue().getKey();
+        if(queuesToIgnore.includes(queue)) return acc
         if (!acc[queue]) acc[queue] = [];
         acc[queue].push({
             key: issue.getKey(),
